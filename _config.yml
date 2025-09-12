@@ -1,64 +1,55 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve -l -H localhost`. If you change this file, please restart the 
-# server process.
-
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "Meray Maddah"
-title                    : "Your Name / Site Title"
+title                    : "Meray Maddah"   
 title_separator          : "-"
 name                     : &name "Meray Maddah"
-description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
-url                      : meraymaddah.github.io
-repository               : "meraymaddah.github.io"
+description              : &description "Comparative Politics, International Governance & Mixed Methods"
+url                      : "https://meraymaddah.github.io" 
+baseurl                  : ""                                  ### line (empty)
+repository               : "MerayMaddah/meraymaddah.github.io"
 
-# Site Author - The following control what appear as part of the author content on the side bar.
-#               If a field is blank the icon and link will not appear, otherwise it will be shown.
-#               Additional customization can be done by editing /_includes/author-profile.html
+
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.png"   # keep; just be sure to upload images/profile.png
   name             : "Meray Maddah"
   pronouns         : "she/her"
   bio              : "Comparative Politics, International Governance & Mixed Methods"
   location         : "Konstanz, Germany"
   employer         : "University of Konstanz"
   uri              : "https://www.polver.uni-konstanz.de/malang/team/wissenschaftliche-mitarbeiterinnen/meray-maddah/"
-  email            : "meray[dot]maddah[at]uni[dash]konstanz[dot]de" 
+  email            : "meray[dot]maddah[at]uni[dash]konstanz[dot]de"
 
   # Academic websites
   academia         : "https://uni-konstanz.academia.edu/MerayMaddah"
-  arxiv            : # URL
+  arxiv            :
   googlescholar    : "https://scholar.google.com/citations?user=T67kjcUAAAAJ&hl=en&authuser=1"
-  inspire-hep      : # URL
-  impactstory      : # URL
+  inspire-hep      :
+  impactstory      :
   orcid            : "https://orcid.org/0000-0003-0454-4024"
-  semantic         : # URL
-  pubmed           : # URL
-  researchgate     : # URL
-  scopus           : # URL
+  semantic         :
+  pubmed           :
+  researchgate     :
+  scopus           :
 
   # Repositories and software development
-  bitbucket        : # Username - Update with your username on the site
-  codepen          : # Username
-  dribbble         : # Username
-  github           : "academicpages"
-  kaggle           : # Username  
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
+  bitbucket        :
+  codepen          :
+  dribbble         :
+  github           : "MerayMaddah"    # ← change from "academicpages"
+  kaggle           :
+  stackoverflow    :
 
   # Social media
-  artstation       : # Username
+  artstation       :
   bluesky          : "@meraymaddah.bsky.social"
-  google_plus      : # Username
+  google_plus      :
   linkedin         : "https://www.linkedin.com/in/meraymaddah/"
-  twitter          : "@MerayMaddah"
-  weibo            : # Username
-  wikipedia        : # Username
-  xing             : # Username
+  twitter          : "MerayMaddah"    # ← remove the @
+  weibo            :
+  wikipedia        :
+  xing             :
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
