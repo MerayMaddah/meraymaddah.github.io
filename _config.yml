@@ -6,9 +6,8 @@ title_separator          : "-"
 name                     : &name "Meray Maddah"
 description              : &description "Comparative Politics, International Governance & Mixed Methods"
 url                      : "https://meraymaddah.github.io"
-baseurl                  : ""                      # must be empty for username.github.io
-repository               : "MerayMaddah/meraymaddah.github.io"
-
+repository   : "MerayMaddah/meraymaddah.github.io"
+remote_theme : "mmistakes/minimal-mistakes@4.24.0"
 
 author:
   avatar   : "profile.png"   # you'll upload this in step 3
@@ -255,22 +254,13 @@ timezone: Etc/UTC # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Plugins
 plugins:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-redirect-from
-  - jemoji
+  - jekyll-include-cache
+  - jekyll-remote-theme
 
 # Mimic GitHub Pages with --safe
 whitelist:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-redirect-from
-  - jemoji
-
+  - jekyll-include-cache
+  - jekyll-remote-theme
 
 # Archives
 #  Type
