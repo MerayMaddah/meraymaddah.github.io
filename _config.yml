@@ -27,11 +27,11 @@ author:
   uri      : "https://www.polver.uni-konstanz.de/malang/team/wissenschaftliche-mitarbeiterinnen/meray-maddah/"
   email    : "meray[dot]maddah[at]uni[dash]konstanz[dot]de"
 
-  academia      : "https://uni-konstanz.academia.edu/MerayMaddah"
+  academia      : # "https://uni-konstanz.academia.edu/MerayMaddah"
   googlescholar : "https://scholar.google.com/citations?user=T67kjcUAAAAJ&hl=en&authuser=1"
   orcid         : "https://orcid.org/0000-0003-0454-4024"
 
-  github   : "MerayMaddah"
+  github   : # "MerayMaddah"
   bluesky  : "@meraymaddah.bsky.social"
   linkedin : "https://www.linkedin.com/in/meraymaddah/"
   twitter  : "MerayMaddah"
