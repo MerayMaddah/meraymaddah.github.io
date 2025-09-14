@@ -8,6 +8,4 @@ redirect_from:
 ---
 {% include base_path %}
 
-# CV
-
 Please find my updated Curriculum Vitae here: [Download CV](/files/CV_MerayMaddah.pdf)
