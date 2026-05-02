@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fieldwork — Meray Maddah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #ede8f5;
+    --ink: #1c1c2e;
+    --muted: #6b6880;
+    --link: #4a3f8a;
+    --accent: #7c6fc4;
+    --soft: #d8d0ef;
+    --white: #f7f4fc;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: var(--soft);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s;
+  }
+  a:hover { text-decoration-color: var(--link); }
+
+  /* NAV */
+  nav {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2.2rem 0 0;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+  nav a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+  nav a:hover, nav a.active { color: var(--link); }
+  nav .sep { color: var(--soft); user-select: none; }
+
+  /* HEADER */
+  header {
+    padding: 3.5rem 0 2rem;
+    border-bottom: 1px solid var(--soft);
+    margin-bottom: 3rem;
+  }
+
+  header h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.1rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+  }
+
+  header p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* COUNTRY SECTIONS */
+  .country-section {
+    margin-bottom: 4rem;
+  }
+
+  .country-label {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .country-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--soft);
+  }
+
+  /* PHOTO GRID */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .photo-grid.single {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-grid.triple {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* PHOTO ITEM */
+  .photo-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .photo-item.wide {
+    grid-column: 1 / -1;
+  }
+
+  /* PLACEHOLDER */
+  .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: var(--soft);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .photo-placeholder.tall {
+    aspect-ratio: 3/4;
+  }
+
+  .photo-placeholder.wide {
+    aspect-ratio: 16/9;
+  }
+
+  .photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 2px;
+  }
+
+  .photo-placeholder .placeholder-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    opacity: 0.5;
+    font-size: 0.78rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .placeholder-icon {
+    width: 32px;
+    height: 32px;
+    opacity: 0.4;
+  }
+
+  /* CAPTION */
+  .caption {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .caption .location {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--soft);
+    padding: 1.8rem 0 3rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 0 1.2rem; }
+    header h1 { font-size: 1.7rem; }
+    nav { gap: 1rem; flex-wrap: wrap; }
+    .photo-grid { grid-template-columns: 1fr; }
+    .photo-grid.triple { grid-template-columns: 1fr; }
+    .photo-item.wide { grid-column: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">about</a>
+  <span class="sep">//</span>
+  <a href="index.html#research">research</a>
+  <span class="sep">//</span>
+  <a href="index.html#news">news</a>
+  <span class="sep">//</span>
+  <a href="index.html#cv">cv</a>
+  <span class="sep">//</span>
+  <a href="index.html#contact">contact</a>
+  <span class="sep">//</span>
+  <a href="fieldwork.html" class="active">fieldwork</a>
+</nav>
+
+<header>
+  <h1>fieldwork</h1>
+  <p>A selection of images from parliamentary assemblies, research visits, and field interviews. The work takes me to places where legislatures meet — and where the politics behind them unfold.</p>
+</header>
+
+<!-- BAHRAIN -->
+<div class="country-section">
+  <div class="country-label">Bahrain</div>
+  <div class="photo-grid">
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <!-- replace src with your image path, e.g. src="images/bahrain-1.jpg" -->
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>bahrain-1.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Manama, Bahrain</span> — add your caption here</div>
+    </div>
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>bahrain-2.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Manama, Bahrain</span> — add your caption here</div>
+    </div>
+    <div class="photo-item wide">
+      <div class="photo-placeholder wide">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>bahrain-3.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Manama, Bahrain</span> — add your caption here</div>
+    </div>
+  </div>
+</div>
+
+<!-- LEBANON -->
+<div class="country-section">
+  <div class="country-label">Lebanon</div>
+  <div class="photo-grid">
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>lebanon-1.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Beirut, Lebanon</span> — add your caption here</div>
+    </div>
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>lebanon-2.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Beirut, Lebanon</span> — add your caption here</div>
+    </div>
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>lebanon-3.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Lebanon</span> — add your caption here</div>
+    </div>
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>lebanon-4.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Lebanon</span> — add your caption here</div>
+    </div>
+  </div>
+</div>
+
+<!-- JORDAN -->
+<div class="country-section">
+  <div class="country-label">Jordan</div>
+  <div class="photo-grid">
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>jordan-1.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Amman, Jordan</span> — add your caption here</div>
+    </div>
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>jordan-2.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Amman, Jordan</span> — add your caption here</div>
+    </div>
+    <div class="photo-item wide">
+      <div class="photo-placeholder wide">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>jordan-3.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Jordan</span> — add your caption here</div>
+    </div>
+  </div>
+</div>
+
+<!-- SWITZERLAND -->
+<div class="country-section">
+  <div class="country-label">Switzerland</div>
+  <div class="photo-grid">
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>switzerland-1.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Geneva, Switzerland</span> — add your caption here</div>
+    </div>
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>switzerland-2.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Geneva, Switzerland</span> — add your caption here</div>
+    </div>
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>switzerland-3.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Switzerland</span> — add your caption here</div>
+    </div>
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>switzerland-4.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Switzerland</span> — add your caption here</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Last updated: April 2026 &nbsp;·&nbsp; <a href="https://github.com/MerayMaddah/meraymaddah.github.io" target="_blank">source</a> &nbsp;·&nbsp; inspired by <a href="https://www.shirokuriwaki.com" target="_blank">Shiro Kuriwaki</a> and <a href="https://lujainibrahim.com" target="_blank">Lujain Ibrahim</a></p>
+</footer>
+
+</body>
+</html>
