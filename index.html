@@ -310,10 +310,14 @@
     font-size: 0.82rem;
     color: var(--muted);
   }
-
-  @media (max-width: 560px) {
+@media (max-width: 560px) {
     .header-inner { grid-template-columns: 1fr; }
-    .photo-block { flex-direction: row; align-items: flex-start; gap: 1rem; }
+    .photo-block { 
+      order: -1;
+      flex-direction: row; 
+      align-items: flex-start; 
+      gap: 1rem;
+    }
     .photo-block img, .photo-placeholder-box { width: 90px; height: 112px; }
     nav { gap: 0.8rem; }
   }
