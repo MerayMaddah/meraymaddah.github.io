@@ -13,6 +13,7 @@
     --fluo-blue: #4f8ef7; --fluo-sky: #60b8f5;
     --purple: #7c3aed;
     --green: #22c55e;
+    --amber: #f59e0b; /* New color for Greece */
     --glow-blue: 0 0 10px rgba(79,142,247,0.28);
     --glow-purple: 0 0 10px rgba(124,58,237,0.22);
     --glow-green: 0 0 10px rgba(34,197,94,0.2);
@@ -44,14 +45,15 @@
     font-size: 1.1rem; font-weight: 400; color: var(--ink);
     margin-bottom: 1.4rem;
     padding-left: 0.65rem;
-    border-left: 2.5px solid transparent; /* default state */
+    border-left: 2.5px solid transparent; 
   }
 
-  /* nth-of-type counts only the DIVs, ignoring NAV and HEADER */
+  /* Vertical Bar Colors */
   .country-section:nth-of-type(1) .country-label { border-left-color: var(--fluo-blue); }
   .country-section:nth-of-type(2) .country-label { border-left-color: var(--purple); }
   .country-section:nth-of-type(3) .country-label { border-left-color: var(--fluo-sky); }
-  .country-section:nth-of-type(4) .country-label { border-left-color: var(--green); }
+  .country-section:nth-of-type(4) .country-label { border-left-color: var(--amber); } /* Greece */
+  .country-section:nth-of-type(5) .country-label { border-left-color: var(--green); } /* Jordan */
 
   /* PHOTO GRID */
   .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -73,15 +75,17 @@
     font-size: 0.78rem; text-align: center; padding: 1rem;
   }
 
-  /* placeholder tints based on section order */
+  /* Placeholder tints based on section order */
   .country-section:nth-of-type(1) .photo-placeholder { background: rgba(79,142,247,0.08); }
   .country-section:nth-of-type(1) .placeholder-inner { color: var(--fluo-blue); opacity: 0.6; }
   .country-section:nth-of-type(2) .photo-placeholder { background: rgba(124,58,237,0.07); }
   .country-section:nth-of-type(2) .placeholder-inner { color: var(--purple); opacity: 0.6; }
   .country-section:nth-of-type(3) .photo-placeholder { background: rgba(96,184,245,0.08); }
   .country-section:nth-of-type(3) .placeholder-inner { color: var(--fluo-sky); opacity: 0.6; }
-  .country-section:nth-of-type(4) .photo-placeholder { background: rgba(34,197,94,0.07); }
-  .country-section:nth-of-type(4) .placeholder-inner { color: var(--green); opacity: 0.6; }
+  .country-section:nth-of-type(4) .photo-placeholder { background: rgba(245,158,11,0.08); } /* Greece tint */
+  .country-section:nth-of-type(4) .placeholder-inner { color: var(--amber); opacity: 0.6; }
+  .country-section:nth-of-type(5) .photo-placeholder { background: rgba(34,197,94,0.07); } /* Jordan tint */
+  .country-section:nth-of-type(5) .placeholder-inner { color: var(--green); opacity: 0.6; }
   
   .placeholder-icon { width: 28px; height: 28px; }
 
@@ -114,7 +118,7 @@
 
 <header>
   <h1>fieldwork</h1>
-  <p>a selection of parliamentary assemblies, research visits, and field interviews.</p>
+  <p>a selection of parliamentary assemblies, IOs, and workshops from the field</p>
 </header>
 
 <!-- 1. BAHRAIN -->
@@ -138,15 +142,6 @@
         </div>
       </div>
       <div class="caption"><span class="location">Manama, Bahrain</span> — add your caption here</div>
-    </div>
-    <div class="photo-item wide">
-      <div class="photo-placeholder wide-ratio">
-        <div class="placeholder-inner">
-          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          <span>bahrain-3.jpg</span>
-        </div>
-      </div>
-      <div class="caption"><span class="location">Bahrain</span> — add your caption here</div>
     </div>
   </div>
 </div>
@@ -189,19 +184,26 @@
       </div>
       <div class="caption"><span class="location">Geneva, Switzerland</span> — add your caption here</div>
     </div>
+  </div>
+</div>
+
+<!-- 4. GREECE -->
+<div class="country-section">
+  <div class="country-label">Greece</div>
+  <div class="photo-grid">
     <div class="photo-item">
       <div class="photo-placeholder">
         <div class="placeholder-inner">
           <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          <span>switzerland-2.jpg</span>
+          <span>greece-1.jpg</span>
         </div>
       </div>
-      <div class="caption"><span class="location">Geneva, Switzerland</span> — add your caption here</div>
+      <div class="caption"><span class="location">Athens, Greece</span> — add your caption here</div>
     </div>
   </div>
 </div>
 
-<!-- 4. JORDAN (Now Last) -->
+<!-- 5. JORDAN -->
 <div class="country-section">
   <div class="country-label">Jordan</div>
   <div class="photo-grid">
@@ -210,15 +212,6 @@
         <div class="placeholder-inner">
           <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           <span>jordan-1.jpg</span>
-        </div>
-      </div>
-      <div class="caption"><span class="location">Amman, Jordan</span> — add your caption here</div>
-    </div>
-    <div class="photo-item">
-      <div class="photo-placeholder">
-        <div class="placeholder-inner">
-          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          <span>jordan-2.jpg</span>
         </div>
       </div>
       <div class="caption"><span class="location">Amman, Jordan</span> — add your caption here</div>
