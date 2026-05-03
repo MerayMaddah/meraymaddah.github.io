@@ -13,7 +13,7 @@
     --fluo-blue: #4f8ef7; --fluo-sky: #60b8f5;
     --purple: #7c3aed;
     --green: #22c55e;
-    --amber: #f59e0b; /* New color for Greece */
+    --amber: #f59e0b; 
     --glow-blue: 0 0 10px rgba(79,142,247,0.28);
     --glow-purple: 0 0 10px rgba(124,58,237,0.22);
     --glow-green: 0 0 10px rgba(34,197,94,0.2);
@@ -37,7 +37,6 @@
   }
   header p { color: var(--muted); font-size: 0.92rem; max-width: 560px; line-height: 1.7; }
 
-  /* COUNTRY SECTIONS */
   .country-section { margin-bottom: 4rem; }
 
   .country-label {
@@ -48,17 +47,14 @@
     border-left: 2.5px solid transparent; 
   }
 
-  /* Vertical Bar Colors */
   .country-section:nth-of-type(1) .country-label { border-left-color: var(--fluo-blue); }
   .country-section:nth-of-type(2) .country-label { border-left-color: var(--purple); }
   .country-section:nth-of-type(3) .country-label { border-left-color: var(--fluo-sky); }
-  .country-section:nth-of-type(4) .country-label { border-left-color: var(--amber); } /* Greece */
-  .country-section:nth-of-type(5) .country-label { border-left-color: var(--green); } /* Jordan */
+  .country-section:nth-of-type(4) .country-label { border-left-color: var(--amber); }
+  .country-section:nth-of-type(5) .country-label { border-left-color: var(--green); }
 
-  /* PHOTO GRID */
-  .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
   .photo-item { display: flex; flex-direction: column; gap: 0.5rem; }
-  .photo-item.wide { grid-column: 1 / -1; }
 
   .photo-placeholder {
     width: 100%; aspect-ratio: 4/3;
@@ -67,7 +63,6 @@
     display: flex; align-items: center; justify-content: center;
     overflow: hidden; position: relative;
   }
-  .photo-placeholder.wide-ratio { aspect-ratio: 16/9; }
   .photo-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 3px; }
 
   .placeholder-inner {
@@ -75,16 +70,15 @@
     font-size: 0.78rem; text-align: center; padding: 1rem;
   }
 
-  /* Placeholder tints based on section order */
   .country-section:nth-of-type(1) .photo-placeholder { background: rgba(79,142,247,0.08); }
   .country-section:nth-of-type(1) .placeholder-inner { color: var(--fluo-blue); opacity: 0.6; }
   .country-section:nth-of-type(2) .photo-placeholder { background: rgba(124,58,237,0.07); }
   .country-section:nth-of-type(2) .placeholder-inner { color: var(--purple); opacity: 0.6; }
   .country-section:nth-of-type(3) .photo-placeholder { background: rgba(96,184,245,0.08); }
   .country-section:nth-of-type(3) .placeholder-inner { color: var(--fluo-sky); opacity: 0.6; }
-  .country-section:nth-of-type(4) .photo-placeholder { background: rgba(245,158,11,0.08); } /* Greece tint */
+  .country-section:nth-of-type(4) .photo-placeholder { background: rgba(245,158,11,0.08); }
   .country-section:nth-of-type(4) .placeholder-inner { color: var(--amber); opacity: 0.6; }
-  .country-section:nth-of-type(5) .photo-placeholder { background: rgba(34,197,94,0.07); } /* Jordan tint */
+  .country-section:nth-of-type(5) .photo-placeholder { background: rgba(34,197,94,0.07); }
   .country-section:nth-of-type(5) .placeholder-inner { color: var(--green); opacity: 0.6; }
   
   .placeholder-icon { width: 28px; height: 28px; }
@@ -96,7 +90,6 @@
 
   @media (max-width: 560px) {
     .photo-grid { grid-template-columns: 1fr; }
-    .photo-item.wide { grid-column: auto; }
   }
 </style>
 </head>
@@ -118,7 +111,7 @@
 
 <header>
   <h1>fieldwork</h1>
-  <p>a selection of parliamentary assemblies, IOs, and workshops from the field</p>
+  <p>This research takes me places -- a selection of parliamentary assemblies, IOs, and (qualitative) notes from the field</p>
 </header>
 
 <!-- 1. BAHRAIN -->
@@ -184,6 +177,15 @@
       </div>
       <div class="caption"><span class="location">Geneva, Switzerland</span> — add your caption here</div>
     </div>
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>switzerland-2.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Geneva, Switzerland</span> — add your caption here</div>
+    </div>
   </div>
 </div>
 
@@ -196,6 +198,15 @@
         <div class="placeholder-inner">
           <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
           <span>greece-1.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Athens, Greece</span> — add your caption here</div>
+    </div>
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>greece-2.jpg</span>
         </div>
       </div>
       <div class="caption"><span class="location">Athens, Greece</span> — add your caption here</div>
@@ -216,11 +227,20 @@
       </div>
       <div class="caption"><span class="location">Amman, Jordan</span> — add your caption here</div>
     </div>
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <div class="placeholder-inner">
+          <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>jordan-2.jpg</span>
+        </div>
+      </div>
+      <div class="caption"><span class="location">Amman, Jordan</span> — add your caption here</div>
+    </div>
   </div>
 </div>
 
 <footer>
-  <p>hosted on GitHub Pages &nbsp;·&nbsp</p>
+  <p>hosted on GitHub pges</p>
   <p style="margin-top:0.4rem;">content design inspired by <a href="https://www.shirokuriwaki.com" target="_blank">Shiro Kuriwaki</a>, <a href="https://lujainibrahim.com" target="_blank">Lujain Ibrahim</a>, and <a href="https://www.jerrymin.com" target="_blank">Jerry Min</a> &nbsp;·&nbsp; color grading (loosely) inspired by <a href="https://brad.bolman.com/" target="_blank">Brad Bolman</a> &nbsp;·&nbsp; last updated May 2026</p>
 </footer>
 
