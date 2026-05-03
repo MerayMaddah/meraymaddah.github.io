@@ -72,10 +72,29 @@
     font-weight: 400;
     letter-spacing: -0.01em;
     color: var(--ink);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.1rem; /* Reduced to fit the name-note tightly */
   }
 
-  /* ROTATING SUBTITLE — fixed for mobile */
+  /* Phonetic Note Style */
+  .name-note {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    display: block;
+    font-style: italic;
+  }
+  .name-note a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-decoration-color: var(--soft);
+  }
+  .name-note a:hover {
+    color: var(--purple);
+    text-decoration-color: var(--purple);
+  }
+
+  /* ROTATING SUBTITLE */
   .rotating-subtitle {
     font-size: 0.88rem;
     color: var(--muted);
@@ -101,7 +120,6 @@
   }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-  /* on small screens, stack prefix and word on separate lines */
   @media (max-width: 480px) {
     .rotating-subtitle { flex-direction: column; gap: 0.1rem; }
     .rotating-word { white-space: normal; }
@@ -316,6 +334,13 @@
 
 <header id="about">
   <h1>Meray Maddah</h1>
+  
+  <span class="name-note">
+    pronounced /mē-rāy/ — think 
+    <a href="https://www.youtube.com/watch?v=5dwUpCZwQt4" target="_blank">Mireille Mathieu</a> 
+    (the French rendition)
+  </span>
+
   <div class="rotating-subtitle">
     <span class="prefix">PhD Candidate in Political Science &nbsp;·&nbsp;</span>
     <span class="rotating-word" id="rotating-word">University of Konstanz</span>
