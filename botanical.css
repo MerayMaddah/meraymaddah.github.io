@@ -1,0 +1,27 @@
+.botanical-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.07;
+  will-change: transform;
+}
+
+.botanical-bg svg {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  min-height: 1200px;
+}
+
+/* everything else sits above the botanical layer */
+nav, header, section, footer {
+  position: relative;
+  z-index: 1;
+}
