@@ -39,13 +39,7 @@
       <path d="M0,0 C5,8 10,18 15,25" stroke-width="0.6"/>
       <path d="M-10,20 C-8,22 -2,24 5,22" stroke-width="0.5"/>
     </g>
-    <!-- large vine leaf 2 -->
-    <g transform="translate(10, 30) rotate(15)">
-      <path d="M0,0 C-15,-10 -24,4 -17,18 C-10,30 4,32 13,21 C22,10 15,-7 0,0Z" stroke-width="1.0"/>
-      <path d="M0,0 L-8,18" stroke-width="0.6"/>
-      <path d="M0,0 C-4,7 -12,10 -17,18" stroke-width="0.6"/>
-      <path d="M0,0 C4,7 9,15 13,21" stroke-width="0.6"/>
-    </g>
+
     <!-- small grape cluster -->
     <g transform="translate(-5, 140)">
       <circle cx="0" cy="0" r="4" stroke-width="0.9"/>
